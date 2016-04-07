@@ -1,0 +1,31 @@
+{
+    "capabilities": [
+                     {
+                     "browserName": "Safari",
+                     "version": "8.4",
+                     "maxInstances": 1,
+                     "orientation": "LANDSCAPE",
+                     "platformName": "iOS",
+                     "platform": "MAC",
+                     "safariIgnoreFraudWarning": "true",
+                     "newCommandTimeout":999
+                     }
+                     ],
+    "configuration":
+    {
+        "cleanUpCycle": 2000,
+        "timeout": 300000,
+        "browserTimeout": 300000,
+        "hub": "http://forgehub.tribpub.com:4444/grid/register",
+        "host": "EditorUX.usa.tribune.com",
+        "maxSession": 1,
+        "port": 4723,
+        "hubPort": 4444,
+        "hubHost" : "forgehub.tribpub.com",
+        "url": "http://EditorUX.usa.tribune.com:4723/wd/hub",
+        "register": true,
+        "registerCycle": 5000,
+        "role": "node",
+        "throwOnCapabilityNotPresent":"false"
+    }
+}

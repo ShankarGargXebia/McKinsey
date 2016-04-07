@@ -5,15 +5,6 @@
 
 package testDriver;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
-import io.appium.java_client.remote.MobileCapabilityType;
-
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Robot;
@@ -101,10 +92,18 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import reporting.LogFile;
 import Common.Property;
 import Common.Utility;
 import dataReader.DBReader;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.remote.MobileCapabilityType;
+import reporting.LogFile;
 
 @SuppressWarnings("unused")
 public class Actions {
@@ -3215,11 +3214,14 @@ public class Actions {
 		 * This code is the work around of the error that java script
 		 * stops loading. Need to find the proper solution later.
 		 */
-		if (!property.getBrowserName().equalsIgnoreCase("firefox")) {
-		    windowResize(w, h);
-		} else {
-		    objLog.writeInfo("Not resizing the browser window for firefox browser.");
-		}
+		/*
+		 * if (!property.getBrowserName().equalsIgnoreCase("firefox")) {
+		 */
+		windowResize(w, h);
+		/*
+		 * } else { objLog.writeInfo(
+		 * "Not resizing the browser window for firefox browser."); }
+		 */
 	    } catch (WebDriverException e) {
 		System.out.println("Exception occured while resizing/maximizing the browser window.");
 	    }
@@ -4319,8 +4321,13 @@ public class Actions {
 	            || this.property.getBrowserName().equalsIgnoreCase("firefox") || this.property.getBrowserName().equalsIgnoreCase("IE")) {
 
 		driver.manage().window().setPosition(new Point(0, 0));
-		org.openqa.selenium.Dimension d = new org.openqa.selenium.Dimension(width, height);
-		driver.manage().window().setSize(d);
+
+		if (width == 0 && height == 0) {
+		    driver.manage().window().maximize();
+		} else {
+		    org.openqa.selenium.Dimension d = new org.openqa.selenium.Dimension(width, height);
+		    driver.manage().window().setSize(d);
+		}
 
 	    }
 

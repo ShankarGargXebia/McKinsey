@@ -147,6 +147,7 @@ public class Actions {
     public static HashMap<Integer, Object> var2ShareAmongTestSteps = new HashMap<>();
 
     public boolean swipeOnScreen = true;
+    public String androidAppActivity;
 
     public Actions(WebDriver driver2, Utility utility, Property property) {
 
@@ -320,12 +321,26 @@ public class Actions {
 			driver.quit();
 			driver = null;
 		    }
+		    //for android Onboarding
+		    if (dataContentFirst.equalsIgnoreCase("onboarding")) {
+			androidAppActivity="com.mckinsey.insights.BootStrapActivity";
+		    }
+		    else{
+			androidAppActivity="com.mckinsey.insights.home.HomeActivity";
+			//com.mckinsey.insights.home.MostPopularActivity
+		    }
+		    
+		    //for iOS Onboarding
 		    if (!dataContentSecond.equalsIgnoreCase("")) {
 			driver = initDriverIOS(dataContentSecond);
-		    } else {
+		    }
+		    else {
 			driver = initDriver();
 		    }
-		} else {
+		    
+		} 
+		//when browser is not native
+		else {
 		    // dataContentFirst variable will be used to set URL
 		    dataContentFirst = "http://www.mckinsey.com/";
 		    // call init method of seleniumImplemention here.
@@ -1387,15 +1402,18 @@ public class Actions {
 		    caps.setCapability("platform", this.property.platform);
 		    caps.setCapability("deviceName", this.property.deviceName);
 		    caps.setCapability("platformVersion", this.property.platformVersion);
+		    caps.setCapability("autoAcceptAlerts", true);
 		    // caps.setCapability("udid", "192.168.56.101:5555");
 		    // caps.setCapability("avd", "AndroidPhone");
 		    // capabilities.setCapability("fullReset", "true");
 		    caps.setCapability("appPackage", "com.mckinsey.mckinseyinsights");
-		    caps.setCapability("appActivity", "com.mckinsey.insights.BootStrapActivity");
+		    caps.setCapability("appActivity", androidAppActivity);
 		    caps.setCapability("app", app.getAbsolutePath());
 
 		    driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-		    ThreadSleep(2500);
+		    ThreadSleepNative(2500);
+		    //driver.findElement(By.name("YES")).click();
+		    //ThreadSleepNative(2500);
 		}
 		// iOS Native
 		else if (this.property.getBrowserName().toLowerCase().contains("ios") && this.property.getBrowserName().toLowerCase().contains("native")) {

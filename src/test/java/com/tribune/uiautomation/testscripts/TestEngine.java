@@ -1,7 +1,5 @@
 package com.tribune.uiautomation.testscripts;
 
-import io.appium.java_client.AppiumDriver;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,15 +18,16 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import Common.Property;
+import Common.TCStatusMap;
+import Common.Utility;
+import dataReader.ReaderUtility;
+import io.appium.java_client.AppiumDriver;
 import reporting.BddStepCreationControler;
 import reporting.HTMLTestCaseCreation;
 import reporting.LogFile;
 import reporting.ReportCreation;
 import testDriver.Actions;
-import Common.Property;
-import Common.TCStatusMap;
-import Common.Utility;
-import dataReader.ReaderUtility;
 
 /**
  * This class has JUnit methods like @Before, @Test. When we run our project as
@@ -149,10 +148,8 @@ public class TestEngine {
 		break;
 	    }
 
-
 	    property.setApplicationURL("http://www.mckinsey.com/");
-	   
-	    
+
 	    // Below information is only for Web Test cases.
 	    if (!this.property.getBrowserName().contains("native")) {
 		// Assigning generateImage
@@ -708,6 +705,8 @@ public class TestEngine {
 		breakPoint = "1500,3000";
 	    } else if (bp.equalsIgnoreCase("4500BP")) {
 		breakPoint = "1500,4500";
+	    } else if (bp.equalsIgnoreCase("maximize")) {
+		breakPoint = "0,0";
 	    }
 	    return breakPoint;
 	} catch (Exception e) {

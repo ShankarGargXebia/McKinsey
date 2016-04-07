@@ -1,5 +1,8 @@
 sno,parent,testobject,objType,how,what,comments
 0,NA,NA,NA,NA,NA,this will be used in Steps which dont need a reference on Object Repository
+1,OnBoadringActivity,LogoImage,Image,id,com.mckinsey.mckinseyinsights:id/initialImage,
+2,OnBoadringActivity,OnBoardImage,Button,id,com.mckinsey.mckinseyinsights:id/onBoardingFirstImage,
+2,OnBoadringActivity,OnBoardTExt,Button,id,com.mckinsey.mckinseyinsights:id/onBoardingFirstPageText,
 2,OnBoadringActivity,Next,Button,id,com.mckinsey.mckinseyinsights:id/onBoardingNextButton,
 2,OnBoadringActivity,Later,Button,id,com.mckinsey.mckinseyinsights:id/regLaterButton,
 3,OnBoadringActivity,FirstName,textfield,id,com.mckinsey.mckinseyinsights:id/accountFirstNameEditText,
@@ -7,6 +10,13 @@ sno,parent,testobject,objType,how,what,comments
 5,OnBoadringActivity,Email,textfield,id,com.mckinsey.mckinseyinsights:id/accountEmailEditText,
 6,OnBoadringActivity,password,textfield,id,com.mckinsey.mckinseyinsights:id/accountPasswordEditText,
 7,OnBoadringActivity,SignupButton,Button,id,com.mckinsey.mckinseyinsights:id/accountCompleteButton,
+8,WelcomeScreen,WelcomeTitle,Textfield,id,com.mckinsey.mckinseyinsights:id/topicsTitleTextView,
+8,WelcomeScreen,TopicSelectionDone,Button,id,com.mckinsey.mckinseyinsights:id/menu_done,
+2,OnBoadringActivity,NotificationPopup,Button,name,YES,
+2,HomeActivity,HomeScreenTitle,Title,id,com.mckinsey.mckinseyinsights:id/mcktitle,
+2,HomeActivity,ArticleOne,Title,id,com.mckinsey.mckinseyinsights:id/tile_1,
+2,HomeActivity,ArticleTwo,Title,id,com.mckinsey.mckinseyinsights:id/tile_2,
+2,ArticleActivity,ArticleBack,Button,class,android.widget.ImageButton,
 8,McKinseyWebHome,Logo,text,xpath,"//*[@class=""main-nav-inner""]/a",
 9,McKinseyWebHome,MenuItem,Button,xpath,"//*[@class=""main-nav""]/ul",
 10,McKinseyWebHome,SearchBox,Button,xpath,"//*[@class=""main-nav""]/ul[2]",

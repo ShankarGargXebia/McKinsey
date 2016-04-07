@@ -5,7 +5,7 @@
                 <parameter name="AUT" value="native"/>
                 <parameter name="browser" value="AndroidPhonePortraitNative"/>
                 <parameter name="TestGroup" value=""/>
-                <parameter name="TestCaseID" value="Android_Launch"/>
+                <parameter name="TestCaseID" value="Android_Launch2"/>
                 <parameter name="TestCaseCount" value=""/>
             </parameters>
             <classes>

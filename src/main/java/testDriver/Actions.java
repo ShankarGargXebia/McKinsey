@@ -5,6 +5,15 @@
 
 package testDriver;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.remote.MobileCapabilityType;
+
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Robot;
@@ -92,18 +101,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import reporting.LogFile;
 import Common.Property;
 import Common.Utility;
 import dataReader.DBReader;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
-import io.appium.java_client.remote.MobileCapabilityType;
-import reporting.LogFile;
 
 @SuppressWarnings("unused")
 public class Actions {
@@ -713,9 +714,11 @@ public class Actions {
 		    }
 		} else if ((this.property.getBrowserName().toLowerCase().contains("ios") && this.property.getBrowserName().toLowerCase().contains("web"))
 		        || this.property.getBrowserName().equalsIgnoreCase("safari")) {
-		    verification = cutRequiredImageSafari(dataContentFirst);
+		    skip=true;
+		    //verification = cutRequiredImageSafari(dataContentFirst);
 		} else if ((this.property.getBrowserName().toLowerCase().contains("android") && this.property.getBrowserName().toLowerCase().contains("web"))) {
-		    verification = cutRequiredImageAndroidChrome(dataContentFirst);
+		    skip=true;
+		    //verification = cutRequiredImageAndroidChrome(dataContentFirst);
 		} else {
 
 		    skip = true;
@@ -725,10 +728,7 @@ public class Actions {
 	    case "compareimages":
 		if (this.property.generateImage.equalsIgnoreCase("false")) {
 		    if (this.property.getBrowserName().equalsIgnoreCase("firefox") || this.property.getBrowserName().equalsIgnoreCase("IE")
-		            || this.property.getBrowserName().equalsIgnoreCase("safari") || this.property.getBrowserName().equalsIgnoreCase("chrome")
-		            || (this.property.getBrowserName().toLowerCase().contains("ios") && this.property.getBrowserName().toLowerCase().contains("web"))
-		            || (this.property.getBrowserName().toLowerCase().contains("android")
-		                    && this.property.getBrowserName().toLowerCase().contains("web"))) {
+		            || this.property.getBrowserName().equalsIgnoreCase("chrome")) {
 			this.property.setStepDescription("Compare Image");
 			verification = compareImages(dataContentFirst, this.property.getActualImageName());
 		    } else {

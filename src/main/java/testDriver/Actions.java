@@ -1575,8 +1575,9 @@ public class Actions {
 	} // Android Native
 	else if (this.property.getBrowserName().toLowerCase().contains("android") && this.property.getBrowserName().toLowerCase().contains("native")) {
 
-	    final File appDir = new File("/Users/forgeuser/Documents/forge-grid");
-	    final File app = new File(appDir, "apps-ct-release.apk");
+	    final File classpathRoot = new File(System.getProperty("user.dir"));
+	    final File appDir = new File(classpathRoot, "src/main/resources/apps/android");
+	    final File app = new File(appDir, "mckinsey.mckinseyinsights.apk");
 
 	    capabilities.setCapability("browserName", "");
 	    capabilities.setCapability("platform", this.property.platform);
@@ -1584,9 +1585,10 @@ public class Actions {
 	    capabilities.setCapability("platformVersion", this.property.platformVersion);
 	    // capabilities.setCapability("avd", "AndroidPhone");
 	    // capabilities.setCapability("fullReset", "true");
+	 
+	    capabilities.setCapability("appPackage", "com.mckinsey.mckinseyinsights");
+	    capabilities.setCapability("appActivity", androidAppActivity);
 	    capabilities.setCapability("app", app.getAbsolutePath());
-	    capabilities.setCapability("appPackage", "com.apptivateme.next.ct");
-	    capabilities.setCapability("appActivity", "");
 
 	    if (this.property.getBrowserName().toLowerCase().contains("phone")) {
 		capabilities.setCapability("udid", "192.168.56.101:5555");

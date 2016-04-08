@@ -2,10 +2,10 @@
     <tests>
         <test name="sanity_grp">
             <parameters>
-                <parameter name="AUT" value="native"/>
-                <parameter name="browser" value="AndroidPhonePortraitNative"/>
+                <parameter name="AUT" value="web"/>
+                <parameter name="browser" value="safari"/>
                 <parameter name="TestGroup" value=""/>
-                <parameter name="TestCaseID" value="Android_Launch2"/>
+                <parameter name="TestCaseID" value="VerifyMcKinseyHomePage1"/>
                 <parameter name="TestCaseCount" value=""/>
             </parameters>
             <classes>

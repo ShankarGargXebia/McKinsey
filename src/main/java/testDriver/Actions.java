@@ -1352,7 +1352,7 @@ public class Actions {
 		// iOS safari
 		else if (this.property.getBrowserName().toLowerCase().contains("ios") && this.property.getBrowserName().toLowerCase().contains("web")) {
 		    DesiredCapabilities caps = new DesiredCapabilities();
-		    caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.4");
+		    caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9.0");
 		    caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
 		    caps.setCapability(CapabilityType.BROWSER_NAME, "Safari");
 		    caps.setCapability("safariIgnoreFraudWarning", "true");

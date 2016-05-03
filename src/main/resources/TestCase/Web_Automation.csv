@@ -1,5 +1,5 @@
 testcase_id,Step,parent,testobject,stepaction,data,TestGroups,options
-VerifyMcKinseyHomePage,Given I Open the browser to go to default application,NA,NA,openbrowser,,"SanityDesktopWeb, ImageComparison",
+VerifyMcKinseyHomePage,Given I Open the browser to go to default application,NA,NA,openbrowser,,ImageComparison,
 ,"verify if ""FeaturedHEader"" is displayed or not",McKinseyWebHome,FeaturedHEader,verifyObjectPresent,,,
 ,"verify if ""Logo"" is displayed or not",McKinseyWebHome,Logo,verifyObjectPresent,,,
 ,"verify if ""MenuItem"" is displayed or not",McKinseyWebHome,MenuItem,verifyObjectPresent,,,

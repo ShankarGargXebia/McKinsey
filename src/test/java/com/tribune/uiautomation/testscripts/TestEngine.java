@@ -138,17 +138,17 @@ public class TestEngine {
 
 	    switch (property.aut) {
 	    case "web":
-		property.TestSuite = "McKinsey_Web_Automation";
+		property.TestSuite = "Web_Automation";
 		break;
 	    case "native":
-		property.TestSuite = "McKinsey_Native_Automation";
+		property.TestSuite = "Native_Automation";
 		break;
 	    default:
-		property.TestSuite = "McKinsey_Web_Automation";
+		property.TestSuite = "Web_Automation";
 		break;
 	    }
 
-	    property.setApplicationURL("http://www.mckinsey.com/");
+	    property.setApplicationURL("http://www.SpiceJet.com/");
 
 	    // Below information is only for Web Test cases.
 	    if (!this.property.getBrowserName().contains("native")) {

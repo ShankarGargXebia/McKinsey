@@ -1,5 +1,5 @@
 testcase_id,Step,parent,testobject,stepaction,data,TestGroups,options
-Android_Launch,Given I Open the browser to go to default application,NA,NA,openbrowser,onboarding,"AndroidNative1, AndroidPhonePortraitNative, AndroidTabletPortraitNative, AndroidTabletLandscapeNative",
+Android_Launch_Register,Given I Open the browser to go to default application,NA,NA,openbrowser,onboarding,"AndroidNative1, AndroidPhonePortraitNative, AndroidTabletPortraitNative, AndroidTabletLandscapeNative",
 ,Wait for the mentioned element,OnBoadringActivity,Next,verifyObjectPresent,,,
 ,verify LogoImage is present,OnBoadringActivity,LogoImage,verifyObjectPresent,,,
 ,verify Onboarding Image is present,OnBoadringActivity,OnBoardImage,verifyObjectPresent,,,
@@ -14,9 +14,9 @@ Android_Launch,Given I Open the browser to go to default application,NA,NA,openb
 ,click on Done Button,WelcomeScreen,TopicSelectionDone,clickObject,,,
 ,click on Yes Button on Notification Popup,OnBoadringActivity,NotificationPopup,clickObject,,,
 ,verify Home Screen Title,HomeActivity,HomeScreenTitle,verifytextpresent,Insights for You,,
-,verify Home Screen Title,HomeActivity,ArticleOne,verifyObjectPresent,,,
+,verify Article on Home screen,HomeActivity,ArticleOne,verifyObjectPresent,,,
 ,close application,NA,NA,closeAllBrowsers,,,
-Android_Launch2,Given I Open the browser to go to default application,NA,NA,openbrowser,onboarding,"AndroidNative2, AndroidPhonePortraitNative, AndroidTabletPortraitNative, AndroidTabletLandscapeNative",
+Android_Launch_Later_HomeScreen,Given I Open the browser to go to default application,NA,NA,openbrowser,onboarding,"AndroidNative2, AndroidPhonePortraitNative, AndroidTabletPortraitNative, AndroidTabletLandscapeNative",
 ,Wait for the mentioned element,OnBoadringActivity,Next,verifyObjectPresent,,,
 ,click Next Button,OnBoadringActivity,Next,clickObject,,,
 ,click Later,OnBoadringActivity,Later,clickObject,,,

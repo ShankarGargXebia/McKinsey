@@ -329,17 +329,16 @@ public class Actions {
 			androidAppActivity="com.mckinsey.insights.home.HomeActivity";
 			//com.mckinsey.insights.home.MostPopularActivity
 		    }
-		    
-		    //for iOS Onboarding
+
+		    // for iOS Onboarding
 		    if (!dataContentSecond.equalsIgnoreCase("")) {
 			driver = initDriverIOS(dataContentSecond);
-		    }
-		    else {
+		    } else {
 			driver = initDriver();
 		    }
-		    
-		} 
-		//when browser is not native
+
+		}
+		// when browser is not native
 		else {
 		    // dataContentFirst variable will be used to set URL
 		    dataContentFirst = "http://www.mckinsey.com/";
@@ -714,11 +713,12 @@ public class Actions {
 		    }
 		} else if ((this.property.getBrowserName().toLowerCase().contains("ios") && this.property.getBrowserName().toLowerCase().contains("web"))
 		        || this.property.getBrowserName().equalsIgnoreCase("safari")) {
-		    skip=true;
-		    //verification = cutRequiredImageSafari(dataContentFirst);
+		    skip = true;
+		    // verification = cutRequiredImageSafari(dataContentFirst);
 		} else if ((this.property.getBrowserName().toLowerCase().contains("android") && this.property.getBrowserName().toLowerCase().contains("web"))) {
-		    skip=true;
-		    //verification = cutRequiredImageAndroidChrome(dataContentFirst);
+		    skip = true;
+		    // verification =
+		    // cutRequiredImageAndroidChrome(dataContentFirst);
 		} else {
 
 		    skip = true;
@@ -1710,12 +1710,11 @@ public class Actions {
      *********************************************************************************************/
 
     public boolean clickObject() throws Exception {
-	ThreadSleep(2000);
-	ThreadSleep(5000);
+	ThreadSleep(1500);
 	try {
 	    explicitWait("elementtobeclickable", null);
 	    testObject.click();
-	    ThreadSleep(2000);
+	    ThreadSleep(1000);
 	    return true;
 	} catch (Exception e) {
 	    exceptionMessage(e);
@@ -3860,10 +3859,10 @@ public class Actions {
 
     public boolean verifyObjectPresent() throws Exception {
 	try {
-	    ThreadSleep(3000);
-	    ThreadSleep(5000);
+	    ThreadSleep(2500);
+	    ThreadSleepNative(1500);
 	    explicitWait("elementsarevisible", null);
-	    ThreadSleep(5000);
+	    ThreadSleep(2500);
 	    boolean status = testObject.isDisplayed();
 
 	    if (status) {
@@ -6371,7 +6370,6 @@ public class Actions {
 	try {
 	    explicitWait("elementtobeclickable", null);
 	    ((MobileElement) testObject).tap(1, 500);
-
 	    ThreadSleepNative(2000);
 	    return true;
 	} catch (Exception e) {

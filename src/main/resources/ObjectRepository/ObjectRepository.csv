@@ -20,7 +20,7 @@ sno,parent,testobject,objType,how,what,comments
 8,McKinseyWebHome,Logo,text,xpath,"//div[@class=""main-nav-inner""]/a",
 9,McKinseyWebHome,MenuItem,Button,xpath,"//*[@class=""main-nav""]/ul",
 10,McKinseyWebHome,SearchBox,Button,xpath,"//*[@class=""main-nav""]/ul[2]",
-11,McKinseyWebHome,BackgroundImage,Image,xpath,"//div[@class=""bg-image""]",
+11,McKinseyWebHome,BackgroundImage,Image,xpath,"//div[@class=""homepage""]/div[2]",
 12,McKinseyWebHome,FeaturedHEader,text,id,latest-thinking-title,
 13,McKinseyWebHomeAndroid,closePopup,Button,xpath,"//div[@class=""app-promo-text-wrapper""]//span[@class=""appPromoClose""]",
 13,McKinseyWebHomeAndroid,Logo,text,xpath,"//div[@class=""top-bar-inner""]/a[2]",
